@@ -37,7 +37,7 @@ jobs:
 
     # Build code
     - name: Build API with dotnet
-      run: dotnet build -c Release -v quiet -o ./DebugConsoleApp/DebugConsoleApp/DebugConsoleApp.csproj > ./logs/log.txt
+      run: dotnet build -c Release -v normal -o ./DebugConsoleApp/DebugConsoleApp/DebugConsoleApp.csproj > ./logs/log.txt
   
     - name: Upload results
       uses: actions/upload-artifact@v1
