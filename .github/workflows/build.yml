@@ -21,7 +21,11 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-
+    
+    # Create log folder
+    - name: Create log folder
+      run : mkdir -p ./logs
+      
     # Setup .NET Core
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
@@ -33,4 +37,12 @@ jobs:
 
     # Build code
     - name: Build API with dotnet
-      run: dotnet build -c Release -v quiet -o ./DebugConsoleApp/DebugConsoleApp/DebugConsoleApp.csproj
+      run: dotnet build -c Release -v quiet -o ./DebugConsoleApp/DebugConsoleApp/DebugConsoleApp.csproj > ./logs/log.txt
+  
+    - name: Upload results
+      uses: actions/upload-artifact@v1
+      if: always()
+      with:
+        name: logs
+        path: ./logs
+
