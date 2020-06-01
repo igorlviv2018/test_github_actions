@@ -37,6 +37,10 @@ jobs:
       run: dotnet build -c Release -v normal ./DebugConsoleApp/DebugConsoleApp/DebugConsoleApp.csproj > ./logs/log.txt
     
     # Run code
+    - name: LS
+      run:  ls ./bugConsoleApp/DebugConsoleApp/bin/Release/netcoreapp3.1/
+      
+    # Run code
     - name: Run console app
       run: ./bugConsoleApp/DebugConsoleApp/bin/Release/netcoreapp3.1/DebugConsoleApp.exe > ./logs/app_log.txt
       
