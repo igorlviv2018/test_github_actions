@@ -38,7 +38,7 @@ jobs:
     
     # Run code
     - name: LS
-      run:  ls ./DebugConsoleApp/DebugConsoleApp/bin/Release/netcoreapp3.1/
+      run:  ls ./DebugConsoleApp/DebugConsoleApp/bin/Release/netcoreapp3.1/DebugConsoleApp
       
     # Run code
     - name: Run console app
