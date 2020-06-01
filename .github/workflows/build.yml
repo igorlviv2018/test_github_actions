@@ -29,7 +29,7 @@ jobs:
         dotnet-version: 3.1.101
         
     - name: PWD
-      run : pwd
+      run : ls ./DebugConsoleApp/DebugConsoleApp/
 
     # Build code
     - name: Build API with dotnet
