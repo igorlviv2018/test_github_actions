@@ -38,11 +38,11 @@ jobs:
     
     # Run code
     - name: LS
-      run:  ls ./DebugConsoleApp/DebugConsoleApp/bin/Release/netcoreapp3.1/DebugConsoleApp
+      run:  ls ./DebugConsoleApp/DebugConsoleApp/bin/Release/netcoreapp3.1/
       
     # Run code
     - name: Run console app
-      run: ./bugConsoleApp/DebugConsoleApp/bin/Release/netcoreapp3.1/DebugConsoleApp.exe > ./logs/app_log.txt
+      run: ./DebugConsoleApp/DebugConsoleApp/bin/Release/netcoreapp3.1/DebugConsoleApp > ./logs/app_log.txt
       
     - name: Upload results
       uses: actions/upload-artifact@v1
