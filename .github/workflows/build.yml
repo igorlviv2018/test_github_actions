@@ -31,14 +31,15 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.101
-        
-    - name: PWD
-      run : ls ./DebugConsoleApp/DebugConsoleApp/
 
     # Build code
-    - name: Build API with dotnet
+    - name: Build app
       run: dotnet build -c Release -v normal ./DebugConsoleApp/DebugConsoleApp/DebugConsoleApp.csproj > ./logs/log.txt
-  
+    
+    # Run code
+    - name: Run console app
+      run: ./bugConsoleApp/DebugConsoleApp/bin/Release/netcoreapp3.1/DebugConsoleApp.exe./logs/app_log.txt
+      
     - name: Upload results
       uses: actions/upload-artifact@v1
       if: always()
