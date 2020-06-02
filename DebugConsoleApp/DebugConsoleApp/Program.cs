@@ -7,7 +7,7 @@ namespace DebugConsoleApp
         static int Main(string[] args)
         {
             Console.WriteLine("test");
-            return 1;
+            return 0;
         }
     }
 }
